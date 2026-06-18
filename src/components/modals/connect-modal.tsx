@@ -19,13 +19,13 @@ import WhatsAppIcon from "../../../public/icons/whatsapp-icon.png";
 import TelegramIcon from "../../../public/icons/telegram-icon.png";
 import CallIcon from "../../../public/icons/call-icon.png";
 
-function ConversationModal() {
-  const { isConversationModalOpen, closeConversationModal } = useModals();
+function ConnectModal() {
+  const { isConnectModalOpen, closeConnectModal } = useModals();
 
   return (
     <Dialog
-      open={isConversationModalOpen}
-      onOpenChange={(open) => !open && closeConversationModal()}
+      open={isConnectModalOpen}
+      onOpenChange={(open) => !open && closeConnectModal()}
     >
       <DialogContent className="md:max-w-120 max-w-[90%] border border-white/10 bg-black/60 backdrop-blur-2xl shadow-[0_30px_120px_rgba(0,0,0,0.35)] rounded-2xl! overflow-hidden">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -122,4 +122,4 @@ function ConversationModal() {
   );
 }
 
-export default ConversationModal;
+export default ConnectModal;

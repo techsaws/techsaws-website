@@ -3,36 +3,36 @@
 import { createContext, useState, ReactNode, useContext } from "react";
 
 type ModalsContextType = {
-  isContactModalOpen: boolean;
-  openContactModal: () => void;
-  closeContactModal: () => void;
+  isConnectModalOpen: boolean;
+  openConnectModal: () => void;
+  closeConnectModal: () => void;
 
-  isConversationModalOpen: boolean;
-  openConversationModal: () => void;
-  closeConversationModal: () => void;
+  isScheduleModalOpen: boolean;
+  openScheduleModal: () => void;
+  closeScheduleModal: () => void;
 };
 
 const ModalsContext = createContext<ModalsContextType | undefined>(undefined);
 
 export const ModalsProvider = ({ children }: { children: ReactNode }) => {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  const [isConversationModalOpen, setIsConversationModalOpen] = useState(false);
+  const [isConnectModalOpen, setIsConnectModalOpen] = useState(false);
+  const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
 
-  const openContactModal = () => setIsContactModalOpen(true);
-  const closeContactModal = () => setIsContactModalOpen(false);
+  const openConnectModal = () => setIsConnectModalOpen(true);
+  const closeConnectModal = () => setIsConnectModalOpen(false);
 
-  const openConversationModal = () => setIsConversationModalOpen(true);
-  const closeConversationModal = () => setIsConversationModalOpen(false);
+  const openScheduleModal = () => setIsScheduleModalOpen(true);
+  const closeScheduleModal = () => setIsScheduleModalOpen(false);
 
   return (
     <ModalsContext.Provider
       value={{
-        isContactModalOpen,
-        openContactModal,
-        closeContactModal,
-        isConversationModalOpen,
-        openConversationModal,
-        closeConversationModal,
+        isConnectModalOpen,
+        openConnectModal,
+        closeConnectModal,
+        isScheduleModalOpen,
+        openScheduleModal,
+        closeScheduleModal,
       }}
     >
       {children}

@@ -8,7 +8,7 @@ import { getHomePageSchema, getWebsiteSchema } from "@/lib/schema";
 import LenisProvider from "@/providers/lenis-provider";
 import { ModalsProvider } from "@/providers/modals-provider";
 
-import ConversationModal from "@/components/partials/conversation-modal";
+import ConnectModal from "@/components/modals/connect-modal";
 
 import { JsonLd } from "@/utils/json-ld";
 
@@ -37,7 +37,7 @@ export default function RootLayout({
         <JsonLd id="home-page" data={getHomePageSchema()} />
         <ModalsProvider>
           <LenisProvider>{children}</LenisProvider>
-          <ConversationModal />
+          <ConnectModal />
         </ModalsProvider>
       </body>
     </html>

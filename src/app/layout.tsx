@@ -6,6 +6,9 @@ import { organizationSchema } from "@/lib/organization";
 import { getHomePageSchema, getWebsiteSchema } from "@/lib/schema";
 
 import LenisProvider from "@/providers/lenis-provider";
+import { ModalsProvider } from "@/providers/modals-provider";
+
+import ConversationModal from "@/components/partials/conversation-modal";
 
 import { JsonLd } from "@/utils/json-ld";
 
@@ -32,7 +35,10 @@ export default function RootLayout({
         <JsonLd id="organization" data={organizationSchema} />
         <JsonLd id="website" data={getWebsiteSchema()} />
         <JsonLd id="home-page" data={getHomePageSchema()} />
-        <LenisProvider>{children}</LenisProvider>
+        <ModalsProvider>
+          <LenisProvider>{children}</LenisProvider>
+          <ConversationModal />
+        </ModalsProvider>
       </body>
     </html>
   );

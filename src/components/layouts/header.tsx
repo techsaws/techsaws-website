@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+
+import { useModals } from "@/providers/modals-provider";
 
 import { siteConfig } from "@/lib/site-config";
 
@@ -15,6 +19,8 @@ const navItems = [
 ] as const;
 
 function Header() {
+  const { openConversationModal } = useModals();
+
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-xl">
       <div className="page-layout flex h-21 items-center justify-between">
@@ -46,7 +52,10 @@ function Header() {
             ))}
           </nav>
 
-          <Button className="px-8 rounded-full bg-primary hover:bg-primary-hover cursor-pointer py-4">
+          <Button
+            onClick={openConversationModal}
+            className="px-8 rounded-full bg-primary hover:bg-primary-hover cursor-pointer py-4"
+          >
             Lets Connect!
           </Button>
         </div>

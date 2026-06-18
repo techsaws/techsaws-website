@@ -19,7 +19,7 @@ const navItems = [
 ] as const;
 
 function Header() {
-  const { openConversationModal } = useModals();
+  const { openConnectModal } = useModals();
 
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-xl">
@@ -53,7 +53,7 @@ function Header() {
           </nav>
 
           <Button
-            onClick={openConversationModal}
+            onClick={openConnectModal}
             className="px-8 rounded-full bg-primary hover:bg-primary-hover cursor-pointer py-4"
           >
             Lets Connect!

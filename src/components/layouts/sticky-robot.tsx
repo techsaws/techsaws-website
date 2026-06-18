@@ -2,12 +2,12 @@
 
 import Lottie from "lottie-react";
 
-import RobotAnimation from "../../../public/animations/ai-robot.json";
+import RobotAnimation from "../../../public/animations/lets-connect.json";
 
 export default function StickyRobot() {
   return (
     <div
-      className="fixed bottom-9 right-8 z-40 pointer-events-none select-none"
+      className="fixed bottom-9 right-[50%] z-40 pointer-events-none select-none"
       aria-hidden="true"
     >
       <div

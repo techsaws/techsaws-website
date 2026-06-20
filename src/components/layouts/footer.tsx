@@ -1,38 +1,38 @@
 import Link from "next/link";
 
-import { siteConfig } from "@/lib/site-config";
-
-const footerLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Systems", href: "#systems" },
-  { label: "Method", href: "#method" },
-  { label: "Contact", href: "#contact" },
-] as const;
-
 function Footer() {
   return (
-    <footer className="border-t border-border bg-muted/30">
-      <div className="page-layout flex flex-col gap-8 py-10 md:flex-row md:items-center md:justify-between">
-        <div className="max-w-xl">
-          <Link href="/" className="font-manrope text-lg font-bold text-heading">
-            {siteConfig.name}
-          </Link>
-          <p className="mt-3 text-sm text-muted-foreground">
-            {siteConfig.shortDescription}
-          </p>
-        </div>
+    <footer
+      className="relative overflow-hidden bg-white"
+      style={{
+        clipPath: "polygon(0% 0,100% 0%,100% 100%,0 100%)",
+      }}
+    >
+      <div className="relative page-layout pt-12">
+        <div className="h-75"></div>
 
-        <nav aria-label="Footer navigation" className="flex flex-wrap gap-4">
-          {footerLinks.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground"
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
+        <div className="mt-12 flex flex-col gap-4 border-b-2 border-black/10 pb-3 text-sm font-manrope font-medium text-black/80 md:flex-row md:items-center md:justify-between">
+          <p className="text-black/70 font-medium">
+            © {new Date().getFullYear()} TechSaws. All rights reserved.
+          </p>
+
+          <div className="flex flex-wrap gap-6">
+            <Link href="/privacy" className="hover:text-primary">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-conditions" className="hover:text-primary">
+              Terms & Conditions
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative h-48 overflow-hidden">
+        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap pointer-events-none select-none z-10">
+          <span className="text-[clamp(6rem,16vw,16rem)] font-black tracking-normal leading-none text-transparent bg-linear-to-t from-black/30 via-black/15 to-transparent bg-clip-text">
+            TECHSAWS
+          </span>
+        </div>
       </div>
     </footer>
   );

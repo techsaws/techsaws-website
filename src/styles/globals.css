@@ -62,8 +62,8 @@
   --secondary-hover: oklch(0.25 0 0);
   --secondary-foreground: oklch(0.94 0 0);
 
-  --accent: oklch(0.2 0 0);
-  --accent-hover: oklch(0.25 0 0);
+  --accent: #e62e2d;
+  --accent-hover: #d72625;
   --accent-foreground: oklch(0.94 0 0);
 
   --muted: oklch(0.2 0 0);

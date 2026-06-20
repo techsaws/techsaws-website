@@ -13,6 +13,7 @@ import ConnectModal from "@/components/modals/connect-modal";
 import { JsonLd } from "@/utils/json-ld";
 
 import "@/styles/globals.css";
+import "@/styles/includes.css";
 
 export const metadata = defaultMetadata;
 export { viewport };

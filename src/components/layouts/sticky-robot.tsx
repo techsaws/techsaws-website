@@ -11,8 +11,8 @@ export default function StickyRobot() {
       aria-hidden="true"
     >
       <div
-        className="md:w-28
-          md:h-28
+        className="md:w-24
+          md:h-24
           w-18
           h-18
           transform-gpu

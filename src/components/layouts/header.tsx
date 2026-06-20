@@ -5,56 +5,59 @@ import Image from "next/image";
 
 import { useModals } from "@/providers/modals-provider";
 
-import { siteConfig } from "@/lib/site-config";
-
 import { Button } from "@/components/ui/button";
 
 import LogoWhite from "../../../public/favicons/logo.png";
-
-const navItems = [
-  { label: "Services", href: "#services" },
-  { label: "Systems", href: "#systems" },
-  { label: "Method", href: "#method" },
-  { label: "Contact", href: "#contact" },
-] as const;
+import { User } from "lucide-react";
 
 function Header() {
   const { openConnectModal } = useModals();
 
   return (
-    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-xl">
-      <div className="page-layout flex h-21 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <Image src={LogoWhite} alt="Logo" className="w-auto h-14" />
-          <div>
-            <h1 className="font-manrope text-2xl font-bold text-heading">
-              {siteConfig.name}
-            </h1>
-            <p className="text-xs uppercase font-semibold text-sub-heading">
-              {siteConfig.slogan}
-            </p>
-          </div>
+    <header className="absolute w-full z-50">
+      <div className="page-layout flex h-30 items-center justify-between">
+        <Link href="/" passHref>
+          <Image
+            src={LogoWhite}
+            alt="Logo"
+            className="w-auto h-16 hover:scale-105 transition-all ease-in-out duration-500"
+          />
         </Link>
 
-        <div className="flex items-center gap-6 max-md:hidden">
-          <nav
-            aria-label="Primary navigation"
-            className="items-center gap-4 flex"
+        <div className="flex items-center gap-6 translate-x-8">
+          <Link
+            href={"/"}
+            className="font-manrope font-bold text-sm uppercase tracking-wide"
           >
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-sm uppercase font-manrope font-semibold text-heading hover:text-primary"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
+            Home
+          </Link>
+          <Link
+            href={"/about"}
+            className="font-manrope font-bold text-sm uppercase tracking-wide"
+          >
+            About
+          </Link>
+          <Link
+            href={"/about"}
+            className="font-manrope font-bold text-sm uppercase tracking-wide"
+          >
+            Services
+          </Link>
+          <Link
+            href={"/about"}
+            className="font-manrope font-bold text-sm uppercase tracking-wide"
+          >
+            Solutions
+          </Link>
+        </div>
 
+        <div className="flex items-center gap-2 max-md:hidden">
+          <div className="p-2 rounded-full bg-muted border-2">
+            <User strokeWidth={3} className="w-4 h-4" />
+          </div>
           <Button
             onClick={openConnectModal}
-            className="px-8 rounded-full bg-primary hover:bg-primary-hover cursor-pointer py-4"
+            className="px-8 rounded-full bg-primary border-4 border-blue-900 hover:bg-primary-hover cursor-pointer py-4.5"
           >
             Lets Connect!
           </Button>

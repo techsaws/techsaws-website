@@ -1,30 +1,6 @@
-.hero-background {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+.glass-nav {
+  background: rgba(255, 240, 240, 0.12);
 
-  background-image:
-    linear-gradient(to right, oklch(0.35 0.03 258 / 0.12) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.35 0.03 258 / 0.12) 1px, transparent 1px);
-
-  background-size: 64px 64px;
-
-  mask-image: radial-gradient(ellipse at center, black 45%, transparent 90%);
-}
-
-@keyframes shine {
-  0%,
-  70%,
-  100% {
-    transform: translateX(-250%) skewX(-20deg);
-  }
-
-  20% {
-    transform: translateX(250%) skewX(-20deg);
-  }
-}
-
-.animate-shine {
-  animation: shine 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  will-change: transform;
+  -webkit-backdrop-filter: blur(28px);
+  backdrop-filter: blur(28px);
 }

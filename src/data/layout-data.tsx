@@ -1,19 +1,6 @@
-import {
-  Bot,
-  Code2,
-  TrendingUp,
-  Shield,
-  Wrench,
-  Briefcase,
-  Users,
-  Layers,
-} from "lucide-react";
+import { Bot, Code2, TrendingUp, Shield } from "lucide-react";
 
 export const HeaderNavData = [
-  {
-    path: "/",
-    title: "Home",
-  },
   {
     path: "/about",
     title: "About",
@@ -53,35 +40,10 @@ export const HeaderNavData = [
   },
   {
     title: "Solutions",
-    subCategory: [
-      {
-        path: "/solutions/managed-support",
-        title: "Managed Services",
-        description:
-          "Maintain, monitor, and optimize critical systems after deployment.",
-        icon: Wrench,
-      },
-      {
-        path: "/solutions/advisory-consulting",
-        title: "Technology Advisory",
-        description:
-          "Get strategic guidance on architecture, AI adoption, and technology decisions.",
-        icon: Briefcase,
-      },
-      {
-        path: "/solutions/project-engagement",
-        title: "Project Delivery",
-        description:
-          "Partner with us to design, build, and launch business-critical systems.",
-        icon: Layers,
-      },
-      {
-        path: "/solutions/dedicated-teams",
-        title: "Dedicated Teams",
-        description:
-          "Extend your organization with embedded engineers and technical specialists.",
-        icon: Users,
-      },
-    ],
+    path: "/solutions",
+  },
+  {
+    title: "Case Studies",
+    path: "/case-studies",
   },
 ];

@@ -1,5 +1,12 @@
-.glass-nav {
+.glass-bg {
   background: rgba(255, 240, 240, 0.12);
+
+  -webkit-backdrop-filter: blur(28px);
+  backdrop-filter: blur(28px);
+}
+
+.glass-bg-dark {
+  background: rgba(18, 20, 28, 0.42);
 
   -webkit-backdrop-filter: blur(28px);
   backdrop-filter: blur(28px);

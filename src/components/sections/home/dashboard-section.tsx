@@ -13,7 +13,7 @@ function DashboardSection() {
       }}
     >
       <div className="page-layout section-tight">
-        <div className="w-full h-full glass-nav rounded-lg py-4 px-8">
+        <div className="w-full h-full glass-bg-dark rounded-lg py-4 px-8">
           <p className="mb-12 text-base font-manrope font-extrabold uppercase tracking-[0.32em] text-sub-heading relative inline-block">
             Solutions
             <span className="absolute bottom-3 left-0 -z-10 h-5 w-full rounded-full bg-sub-heading/20 blur-xl" />
@@ -37,7 +37,7 @@ function DashboardSection() {
                 </Link>
                 <Link
                   href="/"
-                  className="glass-nav rounded-lg px-4 py-3.5 text-sm font-manrope font-normal text-heading transition-transform duration-300 hover:scale-[1.02] tracking-wide"
+                  className="glass-bg rounded-lg px-4 py-3.5 text-sm font-manrope font-normal text-heading transition-transform duration-300 hover:scale-[1.02] tracking-wide"
                 >
                   Login Account
                 </Link>

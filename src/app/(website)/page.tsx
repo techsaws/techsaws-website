@@ -1,13 +1,16 @@
-import DashboardSection from "@/components/sections/home/dashboard-section";
+// import DashboardSection from "@/components/sections/home/dashboard-section";
 import HomeHeroSection from "@/components/sections/home/home-hero-section";
-import WhySection from "@/components/sections/home/why-section";
+// import WhySection from "@/components/sections/home/why-section";
+// import ChallengesSection from "@/components/sections/home/challenges-section";
 
 function HomePage() {
   return (
     <main>
       <HomeHeroSection />
-      <DashboardSection />
-      <WhySection />
+      {/* <DashboardSection /> */}
+      {/* <WhySection /> */}
+      {/* <ChallengesSection /> */}
+      <div className="h-500"></div>
     </main>
   );
 }

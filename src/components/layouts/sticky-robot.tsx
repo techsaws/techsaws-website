@@ -11,13 +11,7 @@ export default function StickyRobot() {
       aria-hidden="true"
     >
       <div
-        className="md:w-24
-          md:h-24
-          w-18
-          h-18
-          transform-gpu
-          will-change-transform
-        "
+        className="md:w-24 md:h-24 w-18 h-18 transform-gpu will-change-transform"
       >
         <Lottie
           animationData={RobotAnimation}

@@ -7,16 +7,12 @@ import { ArrowRight, Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
 
+import { HeaderNavData } from "@/data/layout-data";
+
 import Sidebar from "./sidebar/sidebar";
+import { ServicesDropdown } from "./services-dropdown";
 
 import LogoWhite from "../../../public/favicons/logo.png";
-
-const navItems = [
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Case Studies", href: "/case-studies" },
-];
 
 export default function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -43,26 +39,21 @@ export default function Header() {
             />
           </Link>
 
-          <div className="glass-bg flex items-center gap-1 rounded-lg pl-2 pr-1.5 py-2">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href;
+          <div className="bg-glass flex items-center gap-1 rounded-lg pl-2 pr-1.5 py-2">
+            {HeaderNavData.map((item, index) => {
+              if (item.isSubCategory) {
+                return <ServicesDropdown key={index} item={item} />;
+              }
+
+              const isActive = pathname === item.path;
 
               return (
                 <Link
-                  key={item.label}
-                  href={item.href}
-                  className="
-                  relative rounded-xl px-3.5 py-3 text-sm font-medium
-                  font-manrope text-heading transition-colors duration-300
-                  after:absolute after:left-3.5 after:right-3.5 after:bottom-2
-                  after:h-0.5 after:rounded-full after:origin-left after:scale-x-0
-                  after:bg-primary after:transition-transform
-                  after:duration-300 after:content-['']
-                  hover:after:scale-x-100
-                "
+                  key={index}
+                  href={item.path}
+                  className="relative rounded-xl px-3.5 py-3 text-sm font-medium font-manrope text-heading transition-colors duration-300 after:absolute after:left-3.5 after:right-3.5 after:bottom-2 after:h-0.5 after:rounded-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 after:content-[''] hover:after:scale-x-100"
                 >
-                  {item.label}
-
+                  {item.title}
                   {isActive && (
                     <span className="absolute left-3.5 right-3.5 bottom-2 h-px bg-primary" />
                   )}
@@ -83,7 +74,7 @@ export default function Header() {
         </div>
 
         <div className="py-6 w-full page-layout md:hidden">
-          <div className="glass-bg flex items-center justify-between rounded-full px-6 h-15">
+          <div className="bg-glass flex items-center justify-between rounded-full px-6 h-15">
             <Link href="/">
               <Image
                 src={LogoWhite}
